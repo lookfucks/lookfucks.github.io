@@ -8,7 +8,7 @@
 <meta name="keywords" content="YangYaQiBlog">
 <meta name="description" content="Welcome to YangYaQi  Blog">
 <meta name="theme-color" content="#000">
-<title>使用Eclipse上传文件到Gitee | YaQi  |  Blog</title>
+<title> JSP页面使用SmartUpload上传中文乱码？ | YaQi  |  Blog</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1593752996791">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="使用Eclipse上传文件到Gitee" />
-  <meta name="keywords" content="Gitee,上传,Java" />
+  <meta name="description" content=" JSP页面使用SmartUpload上传中文乱码？" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -518,8 +518,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/">
-      使用Eclipse上传文件到Gitee
+    <a class="post-title-link" href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/">
+       JSP页面使用SmartUpload上传中文乱码？
     </a>
   </h1>
   <div class="post-meta">
@@ -527,34 +527,9 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-07-03 12:58:17">2020-07-03</span>
+      <span class="publish-time" data-t="2020-07-03 13:05:05">2020-07-03</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://lookfucks.github.io/tag/JsYR0gPOU/">
-        <span>Gitee</span>
-      </a>、
-      
-      
-      
-      <a href="https://lookfucks.github.io/tag/SJ3Zpzyhjq/">
-        <span>上传</span>
-      </a>、
-      
-      
-      
-      <a href="https://lookfucks.github.io/tag/KZuEZPWsZO/">
-        <span>Java</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
@@ -563,12 +538,12 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>250<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>108<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/" data-flag-title="使用Eclipse上传文件到Gitee" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/" data-flag-title=" JSP页面使用SmartUpload上传中文乱码？" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -581,25 +556,15 @@
 ✍️  <strong>代码</strong> 之家，来解决你的问题！！！... ...</p>
 <p><a href="https://lookfucks.github.io/">Github</a></p>
 <h2 id="问题">问题</h2>
-<p>📝 如何使用<strong>Eclipse</strong>上传文件到<strong>Gitee</strong>？</p>
-<p>💻解决方法<br>
------首先你需要在码云上注册账号，创建一个仓库</p>
-<p>1.找到你的项目根目录  右键打开git  执行</p>
-<pre><code>git init
+<p>📝 JSP页面使用<strong>SmartUpload</strong> 上传中文乱码？</p>
+<p>💻解决方法</p>
+<pre><code>第一步：
+        在你的上传页编码格式修改为GBK,如下:
+        **&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot;     pageEncoding=&quot;GBK&quot;%&gt;**
+第二步：
+        然后在servlet类中防止乱码加上：
+        **request.setCharacterEncoding(&quot;GBK&quot;);**
 </code></pre>
-<p>创建本地仓库然后会出现一个.git隐藏文件，这就ok了</p>
-<p>2.执行</p>
-<pre><code>git remote add 起的名 你的git远程仓库
-(例如：git remote add mm https://gitee.com/aaa/cdk.git)
-</code></pre>
-<p>3.打开eclipse找到项目右键</p>
-<pre><code>Team--Share Project
-</code></pre>
-<p>直接完成  接着项目右键</p>
-<pre><code>Team - Commit
-</code></pre>
-<p>会在下面打开一个区域先不用管，然后项目右键-<strong>Team--Add to Index</strong>完成以后在<strong>Message</strong>框中输入本次提交说明，直接点击<strong>Commit add push</strong>会打开一个窗口，找到你的仓库下一步就可以了</p>
-<p>4.码云上刷新网页就可以看到你上传的代码</p>
 <p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
 <p>问题解决完毕！</p>
 <p>😘 Enjoy~</p>
@@ -619,7 +584,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/" title="使用Eclipse上传文件到Gitee">https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/</a>
+      <a href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/" title=" JSP页面使用SmartUpload上传中文乱码？">https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -628,25 +593,19 @@
   </ul>
   <div class="tags">
     
-      <a href="https://lookfucks.github.io/tag/JsYR0gPOU/"># Gitee</a>
-    
-      <a href="https://lookfucks.github.io/tag/SJ3Zpzyhjq/"># 上传</a>
-    
-      <a href="https://lookfucks.github.io/tag/KZuEZPWsZO/"># Java</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title=" JSP页面使用SmartUpload上传中文乱码？" href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/"> JSP页面使用SmartUpload上传中文乱码？</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title=" JSP页面使用SmartUpload上传中文乱码？" href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/">上一篇</a>
+        <a class="nav-pc-next" title="Hello，进来的朋友这里看！" href="https://lookfucks.github.io/post/hello/">Hello，进来的朋友这里看！</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="Hello，进来的朋友这里看！" href="https://lookfucks.github.io/post/hello/">上一篇</a>
       
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="谷歌浏览器无法自动播放歌曲" href="https://lookfucks.github.io/post/gu-ge-liu-lan-qi-wu-fa-zi-dong-bo-fang-ge-qu/">谷歌浏览器无法自动播放歌曲</a>
-        <a class="nav-mobile-next" title="谷歌浏览器无法自动播放歌曲" href="https://lookfucks.github.io/post/gu-ge-liu-lan-qi-wu-fa-zi-dong-bo-fang-ge-qu/">下一篇</a>
+        <a class="nav-pc-next" title="使用Eclipse上传文件到Gitee" href="https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/">使用Eclipse上传文件到Gitee</a>
+        <a class="nav-mobile-next" title="使用Eclipse上传文件到Gitee" href="https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

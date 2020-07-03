@@ -8,8 +8,8 @@
 <meta name="keywords" content="YangYaQiBlog">
 <meta name="description" content="Welcome to YangYaQi  Blog">
 <meta name="theme-color" content="#000">
-<title>Hello！ | YaQi  |  Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1593752623579">
+<title>Hello，进来的朋友这里看！ | YaQi  |  Blog</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1593752996791">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="Hello！" />
-  <meta name="keywords" content="jsp,servlet,java,乱码" />
+  <meta name="description" content="Hello，进来的朋友这里看！" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -172,8 +172,7 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -190,19 +189,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">3</span>
+        <span class="site-item-stat-count">4</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">9</span>
+        <span class="site-item-stat-count">5</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">9</span>
+        <span class="site-item-stat-count">5</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -242,195 +241,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E9%97%AE%E9%A2%98">问题</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -519,48 +329,23 @@
             <section class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://lookfucks.github.io/post/hello/">
-      Hello！
+      Hello，进来的朋友这里看！
     </a>
   </h1>
   <div class="post-meta">
     
+    <span class="meta-item">
+      <i class="fa fa-thumb-tack"></i>
+      <span class="language" data-lan="top">置顶</span>
+      <span class="post-meta-divider">|</span>
+    </span>
+    
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-07-03 12:50:00">2020-07-03</span>
+      <span class="publish-time" data-t="2020-07-03 13:09:51">2020-07-03</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://lookfucks.github.io/tag/6Tx0XBoV0/">
-        <span>jsp</span>
-      </a>、
-      
-      
-      
-      <a href="https://lookfucks.github.io/tag/z_snSiNqfC/">
-        <span>servlet</span>
-      </a>、
-      
-      
-      
-      <a href="https://lookfucks.github.io/tag/Rb-wONDxaD/">
-        <span>java</span>
-      </a>、
-      
-      
-      
-      <a href="https://lookfucks.github.io/tag/YHZf8qej5m/">
-        <span>乱码</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
@@ -569,12 +354,12 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>108<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>88<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/hello/" data-flag-title="Hello！" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/hello/" data-flag-title="Hello，进来的朋友这里看！" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -586,19 +371,9 @@
               <p>👏  欢迎进入我的 <strong>博客</strong> ！<br>
 ✍️  <strong>代码</strong> 之家，来解决你的问题！！！... ...</p>
 <p><a href="https://lookfucks.github.io/">Github</a></p>
-<h2 id="问题">问题</h2>
-<p>📝 JSP页面使用<strong>SmartUpload</strong> 上传中文乱码？</p>
-<p>💻解决方法</p>
-<pre><code>第一步：
-        在你的上传页编码格式修改为GBK,如下:
-        **&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot;     pageEncoding=&quot;GBK&quot;%&gt;**
-第二步：
-        然后在servlet类中防止乱码加上：
-        **request.setCharacterEncoding(&quot;GBK&quot;);**
-</code></pre>
-<p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
-<p>问题解决完毕！</p>
-<p>😘 Enjoy~</p>
+<p>一位普普通通的代码搬运工，日常Ctrl+C、Ctrl+V，喜欢研究代码，创作代码的你终于找到了自己的家，此博客解决我的日常会出错的代码，以及解决方案，欢迎参观！！！</p>
+<p><strong><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes">联系我呀！</a></strong></p>
+<p>😘😘😘</p>
 
             </div>
             
@@ -615,7 +390,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lookfucks.github.io/post/hello/" title="Hello！">https://lookfucks.github.io/post/hello/</a>
+      <a href="https://lookfucks.github.io/post/hello/" title="Hello，进来的朋友这里看！">https://lookfucks.github.io/post/hello/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -624,24 +399,16 @@
   </ul>
   <div class="tags">
     
-      <a href="https://lookfucks.github.io/tag/6Tx0XBoV0/"># jsp</a>
-    
-      <a href="https://lookfucks.github.io/tag/z_snSiNqfC/"># servlet</a>
-    
-      <a href="https://lookfucks.github.io/tag/Rb-wONDxaD/"># java</a>
-    
-      <a href="https://lookfucks.github.io/tag/YHZf8qej5m/"># 乱码</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="谷歌浏览器无法自动播放歌曲" href="https://lookfucks.github.io/post/gu-ge-liu-lan-qi-wu-fa-zi-dong-bo-fang-ge-qu/">谷歌浏览器无法自动播放歌曲</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="谷歌浏览器无法自动播放歌曲" href="https://lookfucks.github.io/post/gu-ge-liu-lan-qi-wu-fa-zi-dong-bo-fang-ge-qu/">上一篇</a>
-      
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title=" JSP页面使用SmartUpload上传中文乱码？" href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/"> JSP页面使用SmartUpload上传中文乱码？</a>
+        <a class="nav-mobile-next" title=" JSP页面使用SmartUpload上传中文乱码？" href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
@@ -1659,6 +1426,38 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lookfucks.github.io/post/hello/"" data-c="
+          &lt;p&gt;👏  欢迎进入我的 &lt;strong&gt;博客&lt;/strong&gt; ！&lt;br&gt;
+✍️  &lt;strong&gt;代码&lt;/strong&gt; 之家，来解决你的问题！！！... ...&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lookfucks.github.io/&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一位普普通通的代码搬运工，日常Ctrl+C、Ctrl+V，喜欢研究代码，创作代码的你终于找到了自己的家，此博客解决我的日常会出错的代码，以及解决方案，欢迎参观！！！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://wpa.qq.com/msgrd?v=3&amp;amp;uin=976663239&amp;amp;site=qq&amp;amp;menu=yes&#34;&gt;联系我呀！&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;😘😘😘&lt;/p&gt;
+">Hello，进来的朋友这里看！</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/"" data-c="
+          &lt;p&gt;👏  欢迎进入我的 &lt;strong&gt;博客&lt;/strong&gt; ！&lt;br&gt;
+✍️  &lt;strong&gt;代码&lt;/strong&gt; 之家，来解决你的问题！！！... ...&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lookfucks.github.io/&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
+&lt;p&gt;📝 JSP页面使用&lt;strong&gt;SmartUpload&lt;/strong&gt; 上传中文乱码？&lt;/p&gt;
+&lt;p&gt;💻解决方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;第一步：
+        在你的上传页编码格式修改为GBK,如下:
+        **&amp;lt;%@ page language=&amp;quot;java&amp;quot; import=&amp;quot;java.util.*&amp;quot;     pageEncoding=&amp;quot;GBK&amp;quot;%&amp;gt;**
+第二步：
+        然后在servlet类中防止乱码加上：
+        **request.setCharacterEncoding(&amp;quot;GBK&amp;quot;);**
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;http://wpa.qq.com/msgrd?v=3&amp;amp;uin=976663239&amp;amp;site=qq&amp;amp;menu=yes&#34;&gt;&lt;strong&gt;需作者同意方可转载！&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;问题解决完毕！&lt;/p&gt;
+&lt;p&gt;😘 Enjoy~&lt;/p&gt;
+"> JSP页面使用SmartUpload上传中文乱码？</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/"" data-c="
           &lt;p&gt;👏  欢迎进入我的 &lt;strong&gt;博客&lt;/strong&gt; ！&lt;br&gt;
 ✍️  &lt;strong&gt;代码&lt;/strong&gt; 之家，来解决你的问题！！！... ...&lt;/p&gt;
@@ -1714,27 +1513,6 @@ setInterval(function toggleSound(){
 &lt;p&gt;问题解决完毕！&lt;/p&gt;
 &lt;p&gt;😘 Enjoy~&lt;/p&gt;
 ">谷歌浏览器无法自动播放歌曲</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://lookfucks.github.io/post/hello/"" data-c="
-          &lt;p&gt;👏  欢迎进入我的 &lt;strong&gt;博客&lt;/strong&gt; ！&lt;br&gt;
-✍️  &lt;strong&gt;代码&lt;/strong&gt; 之家，来解决你的问题！！！... ...&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lookfucks.github.io/&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
-&lt;p&gt;📝 JSP页面使用&lt;strong&gt;SmartUpload&lt;/strong&gt; 上传中文乱码？&lt;/p&gt;
-&lt;p&gt;💻解决方法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;第一步：
-        在你的上传页编码格式修改为GBK,如下:
-        **&amp;lt;%@ page language=&amp;quot;java&amp;quot; import=&amp;quot;java.util.*&amp;quot;     pageEncoding=&amp;quot;GBK&amp;quot;%&amp;gt;**
-第二步：
-        然后在servlet类中防止乱码加上：
-        **request.setCharacterEncoding(&amp;quot;GBK&amp;quot;);**
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;http://wpa.qq.com/msgrd?v=3&amp;amp;uin=976663239&amp;amp;site=qq&amp;amp;menu=yes&#34;&gt;&lt;strong&gt;需作者同意方可转载！&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;问题解决完毕！&lt;/p&gt;
-&lt;p&gt;😘 Enjoy~&lt;/p&gt;
-">Hello！</a>
       </div>
       
       <div class="item">

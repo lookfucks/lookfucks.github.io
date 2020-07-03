@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lookfucks.github.io/</id>
     <title>YaQi  |  Blog</title>
-    <updated>2020-07-03T05:03:45.710Z</updated>
+    <updated>2020-07-03T05:10:06.530Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lookfucks.github.io/"/>
     <link rel="self" href="https://lookfucks.github.io/atom.xml"/>
@@ -10,6 +10,44 @@
     <logo>https://lookfucks.github.io/images/avatar.png</logo>
     <icon>https://lookfucks.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, YaQi  |  Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello，进来的朋友这里看！]]></title>
+        <id>https://lookfucks.github.io/post/hello/</id>
+        <link href="https://lookfucks.github.io/post/hello/">
+        </link>
+        <updated>2020-07-03T05:09:51.000Z</updated>
+        <content type="html"><![CDATA[<p>👏  欢迎进入我的 <strong>博客</strong> ！<br>
+✍️  <strong>代码</strong> 之家，来解决你的问题！！！... ...</p>
+<p><a href="https://lookfucks.github.io/">Github</a></p>
+<p>一位普普通通的代码搬运工，日常Ctrl+C、Ctrl+V，喜欢研究代码，创作代码的你终于找到了自己的家，此博客解决我的日常会出错的代码，以及解决方案，欢迎参观！！！</p>
+<p><strong><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes">联系我呀！</a></strong></p>
+<p>😘😘😘</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ JSP页面使用SmartUpload上传中文乱码？]]></title>
+        <id>https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/</id>
+        <link href="https://lookfucks.github.io/post/jsp-ye-mian-shi-yong-smartupload-shang-chuan-zhong-wen-luan-ma/">
+        </link>
+        <updated>2020-07-03T05:05:05.000Z</updated>
+        <content type="html"><![CDATA[<p>👏  欢迎进入我的 <strong>博客</strong> ！<br>
+✍️  <strong>代码</strong> 之家，来解决你的问题！！！... ...</p>
+<p><a href="https://lookfucks.github.io/">Github</a></p>
+<h2 id="问题">问题</h2>
+<p>📝 JSP页面使用<strong>SmartUpload</strong> 上传中文乱码？</p>
+<p>💻解决方法</p>
+<pre><code>第一步：
+        在你的上传页编码格式修改为GBK,如下:
+        **&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot;     pageEncoding=&quot;GBK&quot;%&gt;**
+第二步：
+        然后在servlet类中防止乱码加上：
+        **request.setCharacterEncoding(&quot;GBK&quot;);**
+</code></pre>
+<p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
+<p>问题解决完毕！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用Eclipse上传文件到Gitee]]></title>
         <id>https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/</id>
@@ -68,30 +106,6 @@ setInterval(function toggleSound(){
                 music.play(); //没有就播放
             }
 },10);
-</code></pre>
-<p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
-<p>问题解决完毕！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello！]]></title>
-        <id>https://lookfucks.github.io/post/hello/</id>
-        <link href="https://lookfucks.github.io/post/hello/">
-        </link>
-        <updated>2020-07-03T04:50:00.000Z</updated>
-        <content type="html"><![CDATA[<p>👏  欢迎进入我的 <strong>博客</strong> ！<br>
-✍️  <strong>代码</strong> 之家，来解决你的问题！！！... ...</p>
-<p><a href="https://lookfucks.github.io/">Github</a></p>
-<h2 id="问题">问题</h2>
-<p>📝 JSP页面使用<strong>SmartUpload</strong> 上传中文乱码？</p>
-<p>💻解决方法</p>
-<pre><code>第一步：
-        在你的上传页编码格式修改为GBK,如下:
-        **&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot;     pageEncoding=&quot;GBK&quot;%&gt;**
-第二步：
-        然后在servlet类中防止乱码加上：
-        **request.setCharacterEncoding(&quot;GBK&quot;);**
 </code></pre>
 <p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
 <p>问题解决完毕！</p>
