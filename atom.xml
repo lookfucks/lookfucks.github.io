@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lookfucks.github.io/</id>
     <title>YaQi</title>
-    <updated>2020-07-03T04:53:51.125Z</updated>
+    <updated>2020-07-03T05:01:51.590Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lookfucks.github.io/"/>
     <link rel="self" href="https://lookfucks.github.io/atom.xml"/>
@@ -10,6 +10,70 @@
     <logo>https://lookfucks.github.io/images/avatar.png</logo>
     <icon>https://lookfucks.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, YaQi</rights>
+    <entry>
+        <title type="html"><![CDATA[使用Eclipse上传文件到Gitee]]></title>
+        <id>https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/</id>
+        <link href="https://lookfucks.github.io/post/shi-yong-eclipse-shang-chuan-wen-jian-dao-gitee/">
+        </link>
+        <updated>2020-07-03T04:58:17.000Z</updated>
+        <content type="html"><![CDATA[<p>👏  欢迎进入我的 <strong>博客</strong> ！<br>
+✍️  <strong>代码</strong> 之家，来解决你的问题！！！... ...</p>
+<p><a href="https://lookfucks.github.io/">Github</a></p>
+<h2 id="问题">问题</h2>
+<p>📝 如何使用<strong>Eclipse</strong>上传文件到<strong>Gitee</strong>？</p>
+<p>💻解决方法<br>
+-----首先你需要在码云上注册账号，创建一个仓库</p>
+<p>1.找到你的项目根目录  右键打开git  执行</p>
+<pre><code>git init
+</code></pre>
+<p>创建本地仓库然后会出现一个.git隐藏文件，这就ok了</p>
+<p>2.执行</p>
+<pre><code>git remote add 起的名 你的git远程仓库
+(例如：git remote add mm https://gitee.com/aaa/cdk.git)
+</code></pre>
+<p>3.打开eclipse找到项目右键</p>
+<pre><code>Team--Share Project
+</code></pre>
+<p>直接完成  接着项目右键</p>
+<pre><code>Team - Commit
+</code></pre>
+<p>会在下面打开一个区域先不用管，然后项目右键-<strong>Team--Add to Index</strong>完成以后在<strong>Message</strong>框中输入本次提交说明，直接点击<strong>Commit add push</strong>会打开一个窗口，找到你的仓库下一步就可以了</p>
+<p>4.码云上刷新网页就可以看到你上传的代码</p>
+<p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
+<p>问题解决完毕！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[谷歌浏览器无法自动播放歌曲]]></title>
+        <id>https://lookfucks.github.io/post/gu-ge-liu-lan-qi-wu-fa-zi-dong-bo-fang-ge-qu/</id>
+        <link href="https://lookfucks.github.io/post/gu-ge-liu-lan-qi-wu-fa-zi-dong-bo-fang-ge-qu/">
+        </link>
+        <updated>2020-07-03T04:54:21.000Z</updated>
+        <content type="html"><![CDATA[<p>👏  欢迎进入我的 <strong>博客</strong> ！<br>
+✍️  <strong>代码</strong> 之家，来解决你的问题！！！... ...</p>
+<p><a href="https://lookfucks.github.io/">Github</a></p>
+<h2 id="问题">问题</h2>
+<p>📝 谷歌浏览器无法<strong>自动播放歌曲</strong>？</p>
+<p>💻解决方法</p>
+<pre><code>css代码：
+    &lt;audio id=&quot;vd&quot; style=&quot;display: none;&quot; src=&quot;../audio/    music.m4a&quot;controls=&quot;true&quot; autoplay=&quot;true&quot; playcount=&quot;-1&quot;&gt;
+</code></pre>
+</audio>
+<pre><code>js代码：
+setInterval(function toggleSound(){
+	 var music = document.getElementById(&quot;vd&quot;);//获取ID  
+            if (music.paused) { //判读是否播放  
+                music.paused=false;
+                music.play(); //没有就播放
+            }
+},10);
+</code></pre>
+<p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
+<p>问题解决完毕！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello！]]></title>
         <id>https://lookfucks.github.io/post/hello/</id>
@@ -29,6 +93,7 @@
         然后在servlet类中防止乱码加上：
         **request.setCharacterEncoding(&quot;GBK&quot;);**
 </code></pre>
+<p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=976663239&amp;site=qq&amp;menu=yes"><strong>需作者同意方可转载！</strong></a></p>
 <p>问题解决完毕！</p>
 <p>😘 Enjoy~</p>
 ]]></content>
